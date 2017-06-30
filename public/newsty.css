@@ -1,0 +1,21 @@
+body
+{
+	background-color: lightgrey;
+}
+.a1
+{
+	margin-left: 400px;
+    margin-right: 400px;
+    background-color: white;
+    padding: 50px;
+}
+#a2
+{
+	text-decoration: none;
+	font-size: 15px;
+	color: white;
+}
+.a3
+{
+	margin-left: 80px;
+}
