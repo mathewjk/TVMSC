@@ -3,6 +3,9 @@
 	app.use(express.static("public"));
 	var Datastore = require('nedb')
     var db = new Datastore({filename:'data.db',autoload:true});
+    var mat;
+    app.set("port",process.env.PORT||5000)
+ 
 	app.set('view engine','ejs');
     app.get("/",function(req,res){
     	res.sendFile(__dirname+'/public/login.html')
@@ -22,6 +25,7 @@
 				"email":em
 			}	
 			db.find(person,function(err,result){
+
     		if(result.length!=0)
     			res.render("home",{result})
     		else
@@ -54,7 +58,7 @@
     			res.send("No user found")
     	})
     })
-	app.listen(3000, function () 
+	app.listen(app.get('port'), function () 
 		{
-  			console.log('Open port in 3000!');
+  			console.log('Open!!');
 		});	
