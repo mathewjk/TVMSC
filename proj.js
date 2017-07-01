@@ -24,10 +24,14 @@
 				"password":pas,
 				"email":em
 			}	
+			var per={}
 			db.find(person,function(err,result){
 
     		if(result.length!=0)
-    			res.render("home",{result})
+    		{
+    			db.find(per,function(err1,res1){res.render("home",{result:res1})})
+    			
+    		}
     		else
     			res.send("No user found")
     	})	
